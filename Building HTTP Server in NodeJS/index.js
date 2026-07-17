@@ -1,23 +1,22 @@
-const { log } = require("console");
 const http = require("http");
 const fs = require("fs");
 
-
 const myServer = http.createServer((req, res) => {
-    // console.log("new req rec");
-    const log = `${Date.now()} ${req.url} New req recived \n`;
+    console.log("my server start");
+    const log = `${Date.now()} ${req.url}:  new request resevied \n`;
     fs.appendFile("log.txt", log, (err, data) => {
-
         switch (req.url) {
-            case "/": res.end("Hello My Server")
+            case "/": res.end("This is Home page");
+
                 break;
-            case "/about": res.end("I am about page")
-                break
-            default:  res.end("404 not found")
-        }
-    })
+            case "/about": res.end("This is About page");
+
+            default: res.end("404 not found");
+                break;
+        };
+    });
 });
 
 myServer.listen(8000, () => {
-    log("Server started");
-});    
+    console.log("Server started");
+});

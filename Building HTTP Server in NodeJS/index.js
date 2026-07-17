@@ -11,7 +11,7 @@ const myServer = http.createServer((req, res) => {
         switch (req.url) {
             case "/": res.end("Hello My Server")
                 break;
-            case "/about": res.end("I am bilal")
+            case "/about": res.end("I am about page")
                 break
             default:  res.end("404 not found")
         }

@@ -11,3 +11,6 @@ const fs = require("fs");
 // fs.appendFileSync("./test.txt", new Date().toLocaleString())/
 // fs.appendFileSync("./test.txt", "hye harry")
                
+// console.log(fs.statSync("./test.txt").atime)
+
+const a = fs.writeFileSync("./abu.txt","I am abu iam harrypotter")
